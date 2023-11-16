@@ -51,3 +51,8 @@ require 'partials/_dbconnect.php';
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+
+   <!-- Cards of the categories -->
+   <div class="container">
+    <h2 class='text-center my-4'>iDiscuss - browse categories</h2>
+    <div class="row">
