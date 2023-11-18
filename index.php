@@ -56,3 +56,12 @@ require 'partials/_dbconnect.php';
    <div class="container">
     <h2 class='text-center my-4'>iDiscuss - browse categories</h2>
     <div class="row">
+
+    <!-- fetch all the categories -->
+    <?php $sql = "SELECT * FROM `categories`";
+      $result = mysqli_query($conn, $sql);
+      while ($catRow = mysqli_fetch_assoc($result)) {
+        $sno = $catRow['sno'];
+        $name = $catRow['name'];
+        $desc = $catRow["description"];
+        echo
