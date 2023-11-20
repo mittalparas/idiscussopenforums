@@ -57,11 +57,27 @@ require 'partials/_dbconnect.php';
     <h2 class='text-center my-4'>iDiscuss - browse categories</h2>
     <div class="row">
 
-    <!-- fetch all the categories -->
-    <?php $sql = "SELECT * FROM `categories`";
+<!-- fetch all the categories -->
+<?php $sql = "SELECT * FROM `categories`";
       $result = mysqli_query($conn, $sql);
       while ($catRow = mysqli_fetch_assoc($result)) {
         $sno = $catRow['sno'];
         $name = $catRow['name'];
         $desc = $catRow["description"];
         echo
+        '<div class="col-md-4">
+            <!-- using cards from bootstrap -->
+            <div class="card my-5" style="width: 18rem";>
+              <img src="images/' . $name . '-cat.jpg" class="card-img-top" width="300" height="180">
+              <div class="card-body">
+                <h5 class="card-title">' . $name . '</h5>
+                <p class="/card-text">' . substr($desc, 0, 100) . '...</p>
+                <a href="threads.php?sno=' . $sno . '" class="btn btn-success btn-primary">View threads</a>
+              </div>
+            </div>
+          </div>';
+      }
+      ?>
+
+    </div>
+  </div>
